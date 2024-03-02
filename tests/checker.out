@@ -1,0 +1,155 @@
+make clean_src clean_snippets src snippets
+make[1]: Entering directory '/home/teo/anul2/so/tema2/assignment-memory-allocator/tests'
+make -C /home/teo/anul2/so/tema2/assignment-memory-allocator/src clean
+make[2]: Entering directory '/home/teo/anul2/so/tema2/assignment-memory-allocator/src'
+rm -f ../src.zip
+rm -f libosmem.so
+rm -f osmem.o /home/teo/anul2/so/tema2/assignment-memory-allocator/utils/printf.o
+make[2]: Leaving directory '/home/teo/anul2/so/tema2/assignment-memory-allocator/src'
+rm -rf snippets/test-all snippets/test-calloc-arrays snippets/test-calloc-block-reuse snippets/test-calloc-coalesce-big snippets/test-calloc-coalesce snippets/test-calloc-expand-block snippets/test-calloc-no-preallocate snippets/test-calloc-no-split snippets/test-calloc-preallocate snippets/test-calloc-split-first snippets/test-calloc-split-last snippets/test-calloc-split-middle snippets/test-calloc-split-one-block snippets/test-calloc-split-vector snippets/test-malloc-arrays snippets/test-malloc-block-reuse snippets/test-malloc-coalesce-big snippets/test-malloc-coalesce snippets/test-malloc-expand-block snippets/test-malloc-no-preallocate snippets/test-malloc-no-split snippets/test-malloc-preallocate snippets/test-malloc-split-first snippets/test-malloc-split-last snippets/test-malloc-split-middle snippets/test-malloc-split-one-block snippets/test-malloc-split-vector snippets/test-realloc-arrays snippets/test-realloc-block-reuse snippets/test-realloc-coalesce-big snippets/test-realloc-coalesce snippets/test-realloc-expand-block snippets/test-realloc-no-preallocate snippets/test-realloc-no-split snippets/test-realloc-preallocate snippets/test-realloc-split-first snippets/test-realloc-split-last snippets/test-realloc-split-middle snippets/test-realloc-split-one-block snippets/test-realloc-split-vector
+make -C /home/teo/anul2/so/tema2/assignment-memory-allocator/src
+make[2]: Entering directory '/home/teo/anul2/so/tema2/assignment-memory-allocator/src'
+gcc -fPIC -Wall -Wextra -g -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils  -c -o osmem.o osmem.c
+osmem.c: In function ‘os_malloc’:
+osmem.c:160:10: warning: unused variable ‘p’ [-Wunused-variable]
+    void *p = sbrk(MMAP_THRESHOLD);
+          ^
+At top level:
+osmem.c:19:27: warning: ‘head_mmap’ defined but not used [-Wunused-variable]
+ static struct block_meta *head_mmap = NULL;
+                           ^~~~~~~~~
+gcc -fPIC -Wall -Wextra -g -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils  -c -o /home/teo/anul2/so/tema2/assignment-memory-allocator/utils/printf.o /home/teo/anul2/so/tema2/assignment-memory-allocator/utils/printf.c
+gcc -shared -o libosmem.so osmem.o /home/teo/anul2/so/tema2/assignment-memory-allocator/utils/printf.o
+make[2]: Leaving directory '/home/teo/anul2/so/tema2/assignment-memory-allocator/src'
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-all snippets/test-all.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-arrays snippets/test-calloc-arrays.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-block-reuse snippets/test-calloc-block-reuse.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-coalesce-big snippets/test-calloc-coalesce-big.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-coalesce snippets/test-calloc-coalesce.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-expand-block snippets/test-calloc-expand-block.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-no-preallocate snippets/test-calloc-no-preallocate.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-no-split snippets/test-calloc-no-split.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-preallocate snippets/test-calloc-preallocate.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-split-first snippets/test-calloc-split-first.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-split-last snippets/test-calloc-split-last.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-split-middle snippets/test-calloc-split-middle.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-split-one-block snippets/test-calloc-split-one-block.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-calloc-split-vector snippets/test-calloc-split-vector.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-arrays snippets/test-malloc-arrays.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-block-reuse snippets/test-malloc-block-reuse.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-coalesce-big snippets/test-malloc-coalesce-big.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-coalesce snippets/test-malloc-coalesce.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-expand-block snippets/test-malloc-expand-block.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-no-preallocate snippets/test-malloc-no-preallocate.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-no-split snippets/test-malloc-no-split.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-preallocate snippets/test-malloc-preallocate.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-split-first snippets/test-malloc-split-first.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-split-last snippets/test-malloc-split-last.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-split-middle snippets/test-malloc-split-middle.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-split-one-block snippets/test-malloc-split-one-block.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-malloc-split-vector snippets/test-malloc-split-vector.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-arrays snippets/test-realloc-arrays.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-block-reuse snippets/test-realloc-block-reuse.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-coalesce-big snippets/test-realloc-coalesce-big.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-coalesce snippets/test-realloc-coalesce.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-expand-block snippets/test-realloc-expand-block.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-no-preallocate snippets/test-realloc-no-preallocate.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-no-split snippets/test-realloc-no-split.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-preallocate snippets/test-realloc-preallocate.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-split-first snippets/test-realloc-split-first.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-split-last snippets/test-realloc-split-last.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-split-middle snippets/test-realloc-split-middle.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-split-one-block snippets/test-realloc-split-one-block.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+gcc -I/home/teo/anul2/so/tema2/assignment-memory-allocator/utils -fPIC -Wall -Wextra -g -o snippets/test-realloc-split-vector snippets/test-realloc-split-vector.c -L/home/teo/anul2/so/tema2/assignment-memory-allocator/src -losmem
+make[1]: Leaving directory '/home/teo/anul2/so/tema2/assignment-memory-allocator/tests'
+python3 run_tests.py
+--- /home/teo/anul2/so/tema2/assignment-memory-allocator/tests/snippets/test-malloc-no-split.out
++++ /home/teo/anul2/so/tema2/assignment-memory-allocator/tests/ref/test-malloc-no-split.ref
+@@ -168,8 +168,8 @@
+ os_free (['HeapStart + 0x20020'])                                                         = <void>
+ os_malloc (['7080'])                                                                      = HeapStart + 0x20020
+ os_free (['HeapStart + 0x21c10'])                                                         = <void>
+-os_malloc (['1'])                                                                         = HeapStart + 0x21c10
++os_malloc (['1'])                                                                         = HeapStart + 0x21be8
+ os_free (['HeapStart + 0x20020'])                                                         = <void>
+-os_free (['HeapStart + 0x21c10'])                                                         = <void>
++os_free (['HeapStart + 0x21be8'])                                                         = <void>
+ os_free (['HeapStart + 0x20'])                                                            = <void>
+ +++ exited (status 0) +++
+
+--- /home/teo/anul2/so/tema2/assignment-memory-allocator/tests/snippets/test-calloc-no-split.out
++++ /home/teo/anul2/so/tema2/assignment-memory-allocator/tests/ref/test-calloc-no-split.ref
+@@ -168,8 +168,8 @@
+ os_free (['HeapStart + 0x20020'])                                                         = <void>
+ os_calloc (['2984', '1'])                                                                 = HeapStart + 0x20020
+ os_free (['HeapStart + 0x20c10'])                                                         = <void>
+-os_calloc (['1', '1'])                                                                    = HeapStart + 0x20c10
++os_calloc (['1', '1'])                                                                    = HeapStart + 0x20be8
+ os_free (['HeapStart + 0x20020'])                                                         = <void>
+-os_free (['HeapStart + 0x20c10'])                                                         = <void>
++os_free (['HeapStart + 0x20be8'])                                                         = <void>
+ os_free (['HeapStart + 0x20'])                                                            = <void>
+ +++ exited (status 0) +++
+
+--- /home/teo/anul2/so/tema2/assignment-memory-allocator/tests/snippets/test-calloc-coalesce-big.out
++++ /home/teo/anul2/so/tema2/assignment-memory-allocator/tests/ref/test-calloc-coalesce-big.ref
+@@ -16,7 +16,8 @@
+ os_free (['HeapStart + 0x20090'])                                                         = <void>
+ os_free (['HeapStart + 0x200d8'])                                                         = <void>
+ os_free (['HeapStart + 0x20148'])                                                         = <void>
+-os_calloc (['20', '30'])                                                                  = HeapStart + 0x20148
+-os_free (['HeapStart + 0x20148'])                                                         = <void>
++os_calloc (['20', '30'])                                                                  = HeapStart + 0x20020
++  brk (['HeapStart + 0x20278'])                                                           = HeapStart + 0x20278
++os_free (['HeapStart + 0x20020'])                                                         = <void>
+ os_free (['HeapStart + 0x20'])                                                            = <void>
+ +++ exited (status 0) +++
+
+--- /home/teo/anul2/so/tema2/assignment-memory-allocator/tests/snippets/test-realloc-arrays.out
++++ /home/teo/anul2/so/tema2/assignment-memory-allocator/tests/ref/test-realloc-arrays.ref
+@@ -37,13 +37,13 @@
+ os_realloc (['HeapStart + 0x20050', '25'])                                                = HeapStart + 0x20050
+ os_realloc (['HeapStart + 0x20090', '40'])                                                = HeapStart + 0x20090
+ os_realloc (['HeapStart + 0x200d8', '80'])                                                = HeapStart + 0x200d8
+-os_realloc (['HeapStart + 0x20148', '160'])                                               = 0
++os_realloc (['HeapStart + 0x20148', '160'])                                               = HeapStart + 0x20148
+ os_realloc (['HeapStart + 0x20208', '350'])                                               = HeapStart + 0x20208
+-os_realloc (['HeapStart + 0x20388', '421'])                                               = 0
++os_realloc (['HeapStart + 0x20388', '421'])                                               = HeapStart + 0x20388
+ os_realloc (['HeapStart + 0x20550', '633'])                                               = HeapStart + 0x20550
+-os_realloc (['HeapStart + 0x207f0', '1000'])                                              = 0
++os_realloc (['HeapStart + 0x207f0', '1000'])                                              = HeapStart + 0x207f0
+ os_realloc (['HeapStart + 0x20bf8', '2024'])                                              = HeapStart + 0x20bf8
+-os_realloc (['HeapStart + 0x21400', '4000'])                                              = 0
++os_realloc (['HeapStart + 0x21400', '4000'])                                              = HeapStart + 0x21400
+ os_realloc (['HeapStart + 0x20020', '204800'])                                            = <mapped-addr1> + 0x20
+   mmap (['0', '204832', 'PROT_READ | PROT_WRITE', 'MAP_PRIVATE | MAP_ANON', '-1', '0'])   = <mapped-addr1>
+ os_realloc (['HeapStart + 0x20050', '543942'])                                            = <mapped-addr2> + 0x20
+[...]
+--- /home/teo/anul2/so/tema2/assignment-memory-allocator/tests/snippets/test-realloc-expand-block.out
++++ /home/teo/anul2/so/tema2/assignment-memory-allocator/tests/ref/test-realloc-expand-block.ref
+@@ -4,14 +4,26 @@
+ os_malloc (['10'])                                                                        = HeapStart + 0x20020
+   brk (['HeapStart + 0x20030'])                                                           = HeapStart + 0x20030
+ os_realloc (['HeapStart + 0x20020', '10'])                                                = HeapStart + 0x20020
+-os_realloc (['HeapStart + 0x20020', '25'])                                                = HeapStart + 0x20050
++os_realloc (['HeapStart + 0x20020', '25'])                                                = HeapStart + 0x20020
++  brk (['HeapStart + 0x20040'])                                                           = HeapStart + 0x20040
++os_realloc (['HeapStart + 0x20020', '40'])                                                = HeapStart + 0x20020
++  brk (['HeapStart + 0x20048'])                                                           = HeapStart + 0x20048
++os_realloc (['HeapStart + 0x20020', '80'])                                                = HeapStart + 0x20020
+   brk (['HeapStart + 0x20070'])                                                           = HeapStart + 0x20070
+-os_realloc (['HeapStart + 0x20050', '40'])                                                = HeapStart + 0x20050
+-os_realloc (['HeapStart + 0x20050', '80'])                                                = HeapStart + 0x20050
+-os_realloc (['HeapStart + 0x20050', '160'])                                               = HeapStart + 0x20050
+-os_realloc (['HeapStart + 0x20050', '350'])                                               = HeapStart + 0x20050
+-os_realloc (['HeapStart + 0x20050', '421'])                                               = HeapStart + 0x20050
+-os_realloc (['HeapStart + 0x20050', '633'])                                               = HeapStart + 0x20050
+-os_realloc (['HeapStart + 0x20050', '1000'])                                              = HeapStart + 0x20050
+[...]
+--- /home/teo/anul2/so/tema2/assignment-memory-allocator/tests/snippets/test-realloc-split-one-block.out
++++ /home/teo/anul2/so/tema2/assignment-memory-allocator/tests/ref/test-realloc-split-one-block.ref
+@@ -12,4 +12,17 @@
+ os_realloc (['0', '512'])                                                                 = HeapStart + 0x1fd00
+ os_realloc (['HeapStart + 0x20', '0'])                                                    = 0
+ os_realloc (['HeapStart + 0x18060', '32798'])                                             = HeapStart + 0x20

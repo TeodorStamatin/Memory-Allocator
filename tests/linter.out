@@ -1,0 +1,5 @@
+cd .. && checkpatch.pl -f src/*.c tests/snippets/*.c
+/bin/sh: 1: checkpatch.pl: not found
+Makefile:37: recipe for target 'lint' failed
+make: [lint] Error 127 (ignored)
+cd .. && checkpatch.pl -f checker/*.sh tests/*.sh
